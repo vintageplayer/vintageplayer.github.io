@@ -4,6 +4,8 @@ title = '★✰ Aditya Agarwal ★✰ '
 author = 'Aditya Agarwal'
 theme = 'hugo-bearblog'
 
+publishDir = 'docs'
+
 enableRobotsTXT = true
 
 disableKinds = ["taxonomy"]
