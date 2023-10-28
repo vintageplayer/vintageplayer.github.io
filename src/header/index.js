@@ -24,15 +24,18 @@ const Headermain = () => {
             <Link  className="navbar-brand nav_ac" to="/">
              Home
             </Link>
-            <Link  className="navbar-brand nav_ac" to="/portfolio">
-             Portfolio
+            <Link  className="navbar-brand nav_ac" to="https://blog.artsofbaniya.com" target="_blank" rel="noopener noreferrer">
+             Blog Posts
             </Link>
             <Link  className="navbar-brand nav_ac" to="/about">
              About
             </Link>
+            { false && <>
             <Link  className="navbar-brand nav_ac" to="/contact">
              Contact
             </Link>
+            </>
+            }
           </div>
 
           <div className="d-flex align-items-center">
