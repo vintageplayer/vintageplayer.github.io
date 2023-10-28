@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>★✰ Aditya Agarwal ★✰ </title>
+    <title>Blog on ★✰ Aditya Agarwal ★✰ </title>
     <link>https://blog.artsofbaniya.com/</link>
-    <description>Recent content on ★✰ Aditya Agarwal ★✰ </description>
+    <description>Recent content in Blog on ★✰ Aditya Agarwal ★✰ </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Oct 2023 19:27:22 -0700</lastBuildDate><atom:link href="https://blog.artsofbaniya.com/index.xml" rel="self" type="application/rss+xml" />
@@ -14,17 +14,6 @@
       
       <guid>https://blog.artsofbaniya.com/blog/side-hustling-since-8-years/</guid>
       <description>This is a page about »Side Hustling Since 8 Years«.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://blog.artsofbaniya.com/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.artsofbaniya.com/about/</guid>
-      <description>Hi! I&amp;rsquo;m Aditya. After working for 3 years designing and developing Data Platforms, I took a shot at entrepreneurship.
-I like to think it was in my genes, evident by my (not-so) get-rich-quick schemes before I started coding professionally.
-I&amp;rsquo;m the co-founder at JiffyLabs, working on niche-data API infra in the blockchain world. After it&amp;rsquo;s launch in Apr&#39;23, it grew 28% MoM in usage till September&#39;23. During which period, our fully-bootstrapped company also generated $200k as revenue.</description>
     </item>
     
   </channel>
