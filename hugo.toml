@@ -1,0 +1,13 @@
+baseURL = 'https://blog.artsofbaniya.com/'
+languageCode = 'en-us'
+title = '★✰ Aditya Agarwal ★✰ '
+author = 'Aditya Agarwal'
+theme = 'hugo-bearblog'
+
+enableRobotsTXT = true
+
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+
+[Social]
+  twitter = "artsofbaniya"
