@@ -1,6 +1,6 @@
 +++
 title = 'Blog'
-url = '/'
+url = '/blog'
 [menu]
 [[menu.main]]
   weight = 0
