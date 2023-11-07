@@ -2,18 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.artsofbaniya.com/</loc>
+    <loc>https://artsofbaniya.com/</loc>
     <lastmod>2023-11-06T19:28:20-08:00</lastmod>
   </url><url>
-    <loc>https://blog.artsofbaniya.com/blog/</loc>
+    <loc>https://artsofbaniya.com/blog/</loc>
     <lastmod>2023-11-06T19:28:20-08:00</lastmod>
   </url><url>
-    <loc>https://blog.artsofbaniya.com/blog/top-5-learnings-after-2-years-of-being-a-founder/</loc>
+    <loc>https://artsofbaniya.com/tags/founder-learnings/</loc>
     <lastmod>2023-11-06T19:28:20-08:00</lastmod>
   </url><url>
-    <loc>https://blog.artsofbaniya.com/blog/side-hustling-since-8-years/</loc>
+    <loc>https://artsofbaniya.com/blog/top-5-learnings-after-2-years-of-being-a-founder/</loc>
+    <lastmod>2023-11-06T19:28:20-08:00</lastmod>
+  </url><url>
+    <loc>https://artsofbaniya.com/blog/side-hustling-since-8-years/</loc>
     <lastmod>2023-10-27T19:27:22-07:00</lastmod>
   </url><url>
-    <loc>https://blog.artsofbaniya.com/books/</loc>
+    <loc>https://artsofbaniya.com/books/</loc>
   </url>
 </urlset>

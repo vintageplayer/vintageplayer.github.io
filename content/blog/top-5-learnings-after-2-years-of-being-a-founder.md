@@ -7,7 +7,7 @@ date = "2023-11-06T19:28:20-08:00"
 #
 description = "Top Tips & Learnings for an early-stage tech founder/enterpreneur to keep in mind. These are my learnings after 1 failed and 1 mild-successful product and 3 accelerators."
 
-tags = []
+tags = ['founder learnings']
 +++
 
 I shut down my first company in Oct’21. We were building first, unprepared, listening to folks who weren’t our ideal customers and investors. The core things learned retrospectively:

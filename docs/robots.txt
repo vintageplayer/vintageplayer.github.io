@@ -1,2 +1,2 @@
 User-Agent: *
-Sitemap: https://blog.artsofbaniya.com/sitemap.xml
+Sitemap: https://artsofbaniya.com/sitemap.xml
