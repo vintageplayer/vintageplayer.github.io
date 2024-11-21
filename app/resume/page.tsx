@@ -7,8 +7,8 @@ import WidgetLanguages from '@/components/widget-languages'
 import WidgetReferences from '@/components/widget-references'
 
 export const metadata = {
-  title: 'Resume - DevSpace',
-  description: 'Page description',
+  title: 'Portfolio - ArtsOfBaniya',
+  description: 'Work, Projects, and Contributions of an entrepreneur, builder, and hacker.',
 }
 
 export default function Resume() {

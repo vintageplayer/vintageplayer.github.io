@@ -12,8 +12,8 @@ import Icon07 from '@/public/images/project-icon-07.svg'
 import Icon08 from '@/public/images/project-icon-08.svg'
 
 export const metadata = {
-  title: 'Projects - DevSpace',
-  description: 'Page description',
+  title: 'Projects - ArtsOfBaniya',
+  description: 'Side Projects, Experiments, and Contributions.',
 }
 
 export default function Projects() {

@@ -10,8 +10,8 @@ import Testimonial01 from '@/public/images/testimonial-01.jpg'
 import Testimonial02 from '@/public/images/testimonial-02.jpg'
 
 export const metadata = {
-  title: 'About - DevSpace',
-  description: 'Page description',
+  title: 'Subscribe - ArtsOfBaniya',
+  description: 'Never miss an update ✨. Learnings, Thoughts, and Ideas of an entrepreneur, builder, and hacker.',
 }
 
 export default function Subscribe() {
