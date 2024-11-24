@@ -1,13 +1,14 @@
 export default function FaeturedProjects() {
   return (
     <section>
-      <h2 className="font-aspekta text-xl font-[650] mb-5">Open-Source Projects</h2>
+      <h2 className="font-aspekta text-xl font-[650] mb-5">Companies Founded</h2>
 
       {/* Cards */}
       <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
         <a
           className="rounded-lg border border-slate-200 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
-          href="#0"
+          href="https://www.devscan.ai"
+          target="_blank"
         >
           <div className="flex flex-col h-full">
             <div className="grow">
@@ -20,8 +21,8 @@ export default function FaeturedProjects() {
                   />
                 </svg>
               </div>
-              <div className="text-lg font-aspekta font-[650] mb-1">Awesome Container Tinkering</div>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Solutions for running containers locally and remotely.</p>
+              <div className="text-lg font-aspekta font-[650] mb-1">DevScan</div>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Developer Intent Based LeadGen for DevTools.</p>
             </div>
             <div className="text-sky-500 flex justify-end">
               <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="14" height="12">
@@ -32,7 +33,8 @@ export default function FaeturedProjects() {
         </a>
         <a
           className="rounded-lg border border-slate-200 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
-          href="#0"
+          href="https://www.jiffylabs.xyz"
+          target="_blank"
         >
           <div className="flex flex-col h-full">
             <div className="grow">
@@ -45,8 +47,8 @@ export default function FaeturedProjects() {
                   />
                 </svg>
               </div>
-              <div className="text-lg font-aspekta font-[650] mb-1">Engine Prototypes</div>
-              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Solutions for running containers locally and remotely.</p>
+              <div className="text-lg font-aspekta font-[650] mb-1">JiffyLabs</div>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">Data Platform for decentralized applications using the improved user experience standards (account abstraction).</p>
             </div>
             <div className="text-sky-500 flex justify-end">
               <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="14" height="12">

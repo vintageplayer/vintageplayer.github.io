@@ -8,6 +8,7 @@ interface Item {
   title: string
   excerpt: string
   openSource?: boolean
+  isExternal?: boolean
 }
 
 interface ItemProps {
@@ -16,7 +17,7 @@ interface ItemProps {
 
 export default function ProjectCard({ item }: ItemProps) {
   return (
-    <Link className="rounded-lg border border-slate-200 hover:border-slate-300 dark:border-slate-800 dark:hover:border-slate-700 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 transition-color ease-in-out p-5 group" href={item.slug}>
+    <Link className="rounded-lg border border-slate-200 hover:border-slate-300 dark:border-slate-800 dark:hover:border-slate-700 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 transition-color ease-in-out p-5 group" href={item.slug} target={item.isExternal ? "_blank" : "_self"}>
       <div className="flex flex-col h-full">
         <div className="grow">
           <div className="flex items-center justify-between space-x-2">

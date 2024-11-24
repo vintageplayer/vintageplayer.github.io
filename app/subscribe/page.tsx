@@ -27,7 +27,7 @@ export default function Subscribe() {
               {/* Page content */}
               <div className="text-slate-500 dark:text-slate-400 space-y-8">
                 <p className="text-lg">
-                  This newsletter is written by Mark Ivings, who previously worked at Google, Medium, Vimeo, and Qonto. Here is what to expect
+                  You can subscribe to my newsletter on substack. Here is what to expect
                   by subscribing:
                 </p>
                 <ul className="space-y-4">
@@ -49,7 +49,7 @@ export default function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>Actionable advice for engineering managers, software engineers and tech workers.</span>
+                    <span>Actionable advice for tech founders, growth-hackers, indie-hackers, executives and tech workers.</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -59,7 +59,7 @@ export default function Subscribe() {
                     >
                       <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7A1 1 0 0010.28 2.28z" />
                     </svg>
-                    <span>A pulse on the tech market and scoop worth knowing.</span>
+                    <span>Pragmatic advice with sound logic and proof.</span>
                   </li>
                   <li className="flex items-start">
                     <svg
@@ -73,8 +73,9 @@ export default function Subscribe() {
                   </li>
                 </ul>
                 <div>
+                  <iframe src="https://artsofbaniya.substack.com/embed" width="480" height="320" style={{ border: '1px solid #EEE', background: 'white' }} frameBorder="0" scrolling="no"></iframe>
                   {/* Subscribe form */}
-                  <form>
+                  <form className="hidden">
                     <div className="flex flex-col md:flex-row justify-center max-w-xs mx-auto md:max-w-md md:mx-0">
                       <input
                         type="email"
@@ -89,7 +90,7 @@ export default function Subscribe() {
                     {/* Success message */}
                     {/* <p className="text-xs text-slate-500 mt-3 italic">Thanks for subscribing!</p> */}
                   </form>
-                  <div className="flex items-center mt-5">
+                  <div className="flex items-center mt-5 hidden">
                     <div className="inline-flex -space-x-3 -ml-0.5">
                       <Image
                         className="rounded-full border-2 border-white dark:border-slate-800 box-content"
@@ -135,7 +136,7 @@ export default function Subscribe() {
 
             <section>
               {/* Cards */}
-              <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
+              <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5 hidden">
                 <a
                   className="rounded-lg border border-slate-200 dark:border-slate-800 dark:bg-gradient-to-t dark:from-slate-800 dark:to-slate-800/30 odd:-rotate-1 even:rotate-1 hover:rotate-0 transition-transform duration-700 hover:duration-100 ease-in-out p-5"
                   href="#0"
@@ -179,7 +180,7 @@ export default function Subscribe() {
         <div className="space-y-6">
 
           <WidgetSponsor />
-          <WidgetBook />
+          {/* <WidgetBook /> */}
 
         </div>
       </aside>

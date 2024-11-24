@@ -49,9 +49,13 @@ export default function WidgetNewsletter() {
       </div>
       <div className="text-center mb-8">
         <div className="font-aspekta font-[650] mb-1">Never miss an update!</div>
-        <p className="text-sm text-slate-500 dark:text-slate-400">Subscribe and join 100K+ developers.</p>
+        <p className="text-sm text-slate-500 dark:text-slate-400">Subscribe and join other early-stage founders.</p>
+        {/* <p className="text-sm text-slate-500 dark:text-slate-400">Subscribe and join 100K+ developers.</p> */}
       </div>
-      <form>
+      <a className="btn-sm w-full  text-slate-100 bg-sky-500 hover:bg-sky-600" href="/subscribe">
+        Subscribe
+      </a>
+      <form className="hidden">
         <div className="mb-2">
           <label className="sr-only" htmlFor="newsletter">
             Your email…

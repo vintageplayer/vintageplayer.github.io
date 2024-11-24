@@ -35,7 +35,7 @@ export default async function Home() {
                 <h2 className="font-aspekta text-xl font-[650] mb-3">Latest Articles</h2>
 
                 {/* Filters */}
-                <ul className="flex flex-wrap text-sm border-b border-slate-100 dark:border-slate-800">
+                <ul className="flex flex-wrap text-sm border-b border-slate-100 dark:border-slate-800 hidden">
                   <li className="px-3 -mb-px">
                     <a className="block py-3 font-medium text-slate-800 dark:text-slate-100 border-b-2 border-sky-500" href="#0">
                       Coding
@@ -64,9 +64,10 @@ export default async function Home() {
                       <PostItem key={postIndex} {...post} />
                   ))}
                 </div>
+
               </section>
 
-              <Talks />
+              {/* <Talks /> */}
               <FeaturedProjects />
 
             </div>
@@ -79,7 +80,7 @@ export default async function Home() {
 
             <WidgetNewsletter />
             <WidgetSponsor />
-            <WidgetBook />
+            {/* <WidgetBook /> */}
 
           </div>
         </aside>

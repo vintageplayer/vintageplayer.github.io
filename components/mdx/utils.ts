@@ -54,3 +54,7 @@ function getMDXData(dir: string) {
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), "content/blog"));
 }
+
+export function getBookRecommendations() {
+  return readMDXFile(path.join(process.cwd(), "content/book-recommendations.mdx"));
+}

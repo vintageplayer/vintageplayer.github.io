@@ -18,73 +18,81 @@ export const metadata = {
 
 export default function Projects() {
 
-  const items01 = [
+  const companies_founded = [
     {
       id: 0,
       icon: Icon01,
-      slug: '#0',
-      title: 'Container Tinkering',
-      excerpt: 'Solutions for running containers locally and remotely.',
-      openSource: true,
+      slug: 'https://www.devscan.ai',
+      title: 'DevScan',
+      excerpt: 'Developer Intent Based LeadGen for DevTools.',
+      openSource: false,
+      isExternal: true,
     },
     {
       id: 0,
       icon: Icon02,
-      slug: '#0',
-      title: 'Engine Prototypes',
-      excerpt: 'Solutions for running containers locally and remotely.',
-      openSource: false,
+      slug: 'https://www.jiffylabs.xyz',
+      title: 'JiffyLabs',
+      excerpt: 'Data Platform for decentralized applications using the improved user experience standards (account abstraction).',
+      openSource: true,
+      isExternal: true,
     },
   ]
 
-  const items02 = [
+  const side_projects = [
     {
       id: 0,
       icon: Icon03,
       slug: '#0',
-      title: 'PixelOkay',
-      excerpt: 'Code assets and services for people, with people.',
+      title: 'Lunch Buddy',
+      excerpt: 'Meet New People and share. Connects you with people down to chat during lunch.',
       openSource: false,
+      isExternal: true,
     },
     {
       id: 1,
       icon: Icon04,
       slug: '#0',
-      title: 'Storybook',
-      excerpt: 'Storybook helps you develop, test, and document UIs.',
+      title: 'Standup Buddy',
+      excerpt: 'Meet New People and grow together.Create groups of people in your area to have daily standups with for a sprint.',
       openSource: false,
+      isExternal: true,
     },
     {
       id: 2,
       icon: Icon05,
       slug: '#0',
-      title: 'Knowledge AI',
-      excerpt: 'Instantly answers all questions based on your internal knowledge bases.',
+      title: 'FindMyCTO',
+      excerpt: 'Find techies actively coding and have previous founder experience.',
       openSource: false,
+      isExternal: true,
     },
     {
       id: 3,
       icon: Icon06,
       slug: '#0',
-      title: 'Security Frame',
-      excerpt: 'Automated security compliance for your business.',
+      title: 'EligibleForO1Visa',
+      excerpt: 'Tool To instantly check if you are eligible for O1 Visa, instead of paying hefty lawyer fees.',
       openSource: false,
+      isExternal: true,
     },
     {
       id: 4,
       icon: Icon07,
       slug: '#0',
-      title: 'KanbanOK',
-      excerpt: 'The most powerful kanban board ever invented.',
+      title: 'Nudge Buddy',
+      excerpt: 'Reminds you to stay in touch with people and keep your network alive.',
       openSource: false,
+      isExternal: true,
     },
     {
       id: 5,
       icon: Icon08,
       slug: '#0',
-      title: 'T Analytics',
-      excerpt: 'Make your Twitter analytics pretty and easy to share.',
+      title: 'Email Drafting',
+      excerpt: 'Voice assistant to draft awesome emails for your in seconds.',
       openSource: false,
+      isExternal: true,
     },
   ]
 
@@ -102,11 +110,11 @@ export default function Projects() {
             <div className="space-y-10">
               {/* Side Hustles cards */}
               <section>
-                <h2 className="font-aspekta text-xl font-[650] mb-6">Side Hustles</h2>
+                <h2 className="font-aspekta text-xl font-[650] mb-6">Companies Founded</h2>
                 {/* Cards */}
                 <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
 
-                  {items01.map(item => (
+                  {companies_founded.map(item => (
                     <ProjectCard key={item.id} item={item} />
                   ))}
 
@@ -114,11 +122,11 @@ export default function Projects() {
               </section>
               {/* Client Projects cards */}
               <section>
-                <h2 className="font-aspekta text-xl font-[650] mb-6">Client Projects</h2>
+                <h2 className="font-aspekta text-xl font-[650] mb-6">Side Projects</h2>
                 {/* Cards */}
                 <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-5">
 
-                  {items02.map(item => (
+                  {side_projects.map(item => (
                     <ProjectCard key={item.id} item={item} />
                   ))}
 

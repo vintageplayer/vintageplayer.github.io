@@ -8,6 +8,7 @@ import HeroImage from '@/public/images/me.jpg'
 export default function SideNavigation() {
 
   const pathname = usePathname()
+  const isHome = pathname !== '/about' && pathname !== '/subscribe' && pathname !== '/projects' && pathname !== '/resume' && pathname !== '/books'
 
   return (
     <div className="sticky top-0 w-16 md:w-24 shrink-0 h-screen overflow-y-auto no-scrollbar border-r border-slate-200 dark:border-slate-800">
@@ -27,7 +28,7 @@ export default function SideNavigation() {
               <li className="py-2">
                 <Link
                   href="/"
-                  className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${pathname !== '/about' && pathname !== '/subscribe' && pathname !== '/projects' && pathname !== '/resume'
+                  className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${ isHome
                       ? 'text-sky-500 after:bg-sky-500'
                       : 'text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400'
                     }`}
@@ -71,6 +72,21 @@ export default function SideNavigation() {
               </li>
               <li className="py-2">
                 <Link
+                  href="/books"
+                  className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${pathname === '/books'
+                    ? 'text-sky-500 after:bg-sky-500'
+                    : 'text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400'
+                    }`}
+                >
+                  <span className="sr-only">Book Recommendations</span>
+                  <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path fillOpacity=".16" d="M1 5h16v14H1z" />
+                    <path d="M2 6v12h14V6H2Zm16-2v16H0V4h18ZM2 2V0h14v2H2Z" />
+                  </svg>
+                </Link>
+              </li>                            
+              <li className="py-2 hidden">
+                <Link
                   href="/resume"
                   className={`w-full h-6 flex items-center justify-center relative after:absolute after:w-0.5 after:right-0 after:top-0 after:bottom-0 ${pathname === '/resume'
                     ? 'text-sky-500 after:bg-sky-500'
@@ -79,8 +95,8 @@ export default function SideNavigation() {
                 >
                   <span className="sr-only">Resume</span>
                   <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="18" height="20">
-                    <path fillOpacity=".16" fillRule="nonzero" d="M1 5h16v14H1z" />
-                    <path fillRule="nonzero" d="M2 6v12h14V6H2Zm16-2v16H0V4h18ZM2 2V0h14v2H2Z" />
+                    <path fillOpacity=".16" d="M1 5h16v14H1z" />
+                    <path d="M2 6v12h14V6H2Zm16-2v16H0V4h18ZM2 2V0h14v2H2Z" />
                   </svg>
                 </Link>
               </li>                            
