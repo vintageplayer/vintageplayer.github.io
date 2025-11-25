@@ -15,7 +15,7 @@ export default function Hero() {
             entrepreneur.
           </h1>
           <p className="text-lg text-slate-500 dark:text-slate-400">
-            Chasing fulfillment by solving problems. Founder of DevScan, JiffyLabs and <a href="/projects" className="text-sky-500">more</a>. I write about coding, startups, and my journey as a full-time maker.
+            Building Mental Models for Tech Entrepreneurs. Founder of DevScan, JiffyLabs and <a href="/projects" className="text-sky-500">more</a>. I write about coding, startups, and my journey as a full-time builer.
           </p>
         </div>
       </div>
