@@ -87,7 +87,8 @@ h1, h2, h3, p { margin-top: 0; }
 .about-page .page-intro { padding-bottom: 28px; }
 .about-page .page-intro h1 { font-size: clamp(28px, 3.8vw, 36px); }
 .about-opening { max-width: 650px; margin-bottom: 28px; color: var(--body); font: 400 15px/1.65 var(--sans); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; padding-top: 26px; border-top: 1px solid var(--line); }
+.about-grid { display: grid; grid-template-columns: 1fr; gap: 26px; padding-top: 26px; border-top: 1px solid var(--line); }
+.about-grid section + section { padding-top: 26px; border-top: 1px solid var(--line); }
 .about-grid h2 { margin-bottom: 10px; font-size: 14px; font-weight: 600; }
 .about-grid p { color: var(--body); font: 400 14px/1.65 var(--sans); }
 .about-closing { margin-top: 28px; font: 400 14px/1.65 var(--sans); }
