@@ -1,0 +1,27 @@
+---
+import { siteConfig } from "@/site.config";
+import type { SiteMeta } from "@/types";
+import "@/styles/global.css";
+
+const { description = siteConfig.description, title } = Astro.props as SiteMeta;
+const pageTitle = title === siteConfig.title ? title : `${title} · ${siteConfig.title}`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>{pageTitle}</title>
+<meta content={description} name="description" />
+<meta content={siteConfig.author} name="author" />
+<link href={canonicalUrl} rel="canonical" />
+<link href="/icon.svg" rel="icon" type="image/svg+xml" />
+<meta content="website" property="og:type" />
+<meta content={pageTitle} property="og:title" />
+<meta content={description} property="og:description" />
+<meta content={canonicalUrl} property="og:url" />
+<meta content={siteConfig.title} property="og:site_name" />
+<meta content={siteConfig.ogLocale} property="og:locale" />
+<meta content="summary" name="twitter:card" />
+<meta content={pageTitle} name="twitter:title" />
+<meta content={description} name="twitter:description" />
+<meta content={Astro.generator} name="generator" />

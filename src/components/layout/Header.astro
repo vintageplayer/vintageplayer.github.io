@@ -1,0 +1,21 @@
+---
+import { menuLinks, siteConfig } from "@/site.config";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+	<a class="site-name" href="/">{siteConfig.title}</a>
+	<nav aria-label="Primary navigation">
+		{
+			menuLinks.map((link, index) => (
+				<>
+					{index > 0 && <span aria-hidden="true">·</span>}
+					<a aria-current={currentPath.startsWith(link.path) ? "page" : undefined} href={link.path}>
+						{link.title}
+					</a>
+				</>
+			))
+		}
+	</nav>
+</header>

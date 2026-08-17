@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import TimelineTabs from "@/components/TimelineTabs.astro";
+import Base from "@/layouts/Base.astro";
+
+const timeline = await getCollection("timeline");
+---
+
+<Base meta={{ title: "Aditya Agarwal" }}>
+	<section class="hero">
+		<h1>I build software, explore uncertain markets, and learn by doing.</h1>
+		<p>
+			I’m drawn to unfamiliar problems, ambitious people, and paths that are not obvious.
+		</p>
+		<nav class="hero-actions" aria-label="Homepage actions">
+			<a href="/timeline/">Explore my timeline →</a>
+			<a href="#selected-timeline">View selected timeline ↓</a>
+			<a href="#contact">Let’s talk →</a>
+		</nav>
+	</section>
+
+	<section class="home-section" id="selected-timeline">
+		<header class="section-heading">
+			<div>
+				<p class="eyebrow">Selected timeline</p>
+				<h2>A few points along the way</h2>
+			</div>
+			<a class="text-link" href="/timeline/">View full timeline →</a>
+		</header>
+		<TimelineTabs entries={timeline} compact />
+	</section>
+
+	<section class="home-section home-copy">
+		<p class="eyebrow">About</p>
+		<p>
+			I’m drawn to unfamiliar problems, ambitious people, and paths that are not obvious. Outside
+			work, I care about the experiences, interests, and relationships that make life feel expansive.
+		</p>
+		<a class="text-link" href="/about/">More about how I work →</a>
+	</section>
+
+	<section class="home-section home-copy" id="contact">
+		<p class="eyebrow">Let’s talk</p>
+		<h2>Good conversations are always welcome.</h2>
+		<p>
+			The best way to reach me is <span class="contact-address">hello at example dot com</span>.
+		</p>
+	</section>
+</Base>

@@ -1,0 +1,10 @@
+---
+import { socialLinks } from "@/site.config";
+---
+
+<footer class="site-footer">
+	<span>San Francisco · Bangalore</span>
+	<nav aria-label="Social links">
+		{socialLinks.map((link) => <a href={link.href}>{link.title}</a>)}
+	</nav>
+</footer>

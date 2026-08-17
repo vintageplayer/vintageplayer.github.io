@@ -1,0 +1,32 @@
+---
+import PageIntro from "@/components/PageIntro.astro";
+import Base from "@/layouts/Base.astro";
+---
+
+<Base meta={{ title: "About", description: "How I approach work and life outside it." }}>
+	<article class="about-page">
+		<PageIntro eyebrow="About" title="Learning on the go and iterating continuously" />
+		<p class="about-opening">
+			I’m most comfortable where the path is still taking shape—learning quickly, testing assumptions,
+			and refining the direction as new information appears.
+		</p>
+		<div class="about-grid">
+			<section>
+				<h2>How I work</h2>
+				<p>
+					I like starting with the underlying problem, getting close to the people living with it, and
+					using real-world feedback to decide what deserves to be built.
+				</p>
+			</section>
+			<section>
+				<h2>Outside work</h2>
+				<p>
+					I value curiosity, new places, long conversations, and interests that have no obligation to
+					become productive.
+				</p>
+				<a class="text-link" href="/photos/">Photos and places →</a>
+			</section>
+		</div>
+		<p class="about-closing">If any of this resonates, I’d be glad to hear from you.</p>
+	</article>
+</Base>

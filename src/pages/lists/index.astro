@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import PageIntro from "@/components/PageIntro.astro";
+import Base from "@/layouts/Base.astro";
+
+const lists = (await getCollection("list")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base meta={{ title: "Lists", description: "Curated interests, recommendations, places, and tools." }}>
+	<PageIntro
+		eyebrow="Lists"
+		title="Things worth passing along"
+		description="Curated interests, recommendations, places, tools, and other things I keep returning to."
+	/>
+	<div class="list-index">
+		{
+			lists.map((list) => (
+				<a href={`/lists/${list.id}/`}>
+					<div>
+						<h2>{list.data.title}</h2>
+						<small>{list.data.count} ITEMS</small>
+					</div>
+					<span class="row-arrow" aria-hidden="true">→</span>
+				</a>
+			))
+		}
+	</div>
+</Base>

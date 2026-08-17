@@ -1,0 +1,27 @@
+---
+import { getCollection } from "astro:content";
+import PageIntro from "@/components/PageIntro.astro";
+import Base from "@/layouts/Base.astro";
+
+const projects = (await getCollection("project")).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base meta={{ title: "Projects", description: "Companies, products, systems, and experiments." }}>
+	<PageIntro
+		eyebrow="Projects"
+		title="Things I’ve built"
+		description="Companies, products, systems, and experiments. Details can be added as each project earns a fuller note."
+	/>
+	<div class="project-list">
+		{
+			projects.map((project) => (
+				<a class="project-row" href={`/projects/${project.id}/`}>
+					<time>{project.data.period}</time>
+					<h2>{project.data.title}</h2>
+					<small>{project.data.role}</small>
+					<span class="row-arrow" aria-hidden="true">→</span>
+				</a>
+			))
+		}
+	</div>
+</Base>

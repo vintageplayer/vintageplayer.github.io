@@ -1,0 +1,107 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	entries: CollectionEntry<"timeline">[];
+	compact?: boolean;
+}
+
+const { entries, compact = false } = Astro.props;
+const categories = [
+	{
+		id: "professional",
+		label: "Professional",
+		heading: "From large-scale engineering to building companies.",
+	},
+	{
+		id: "before-graduation",
+		label: "Before graduation",
+		heading: "The early evidence of initiative and resourcefulness.",
+	},
+	{
+		id: "life",
+		label: "Life outside work",
+		heading: "The experiences and interests behind the résumé.",
+	},
+] as const;
+---
+
+<timeline-tabs class:list={["timeline-tabs-block", compact && "is-compact"]}>
+	<div class="tab-list" role="tablist" aria-label="Timeline view">
+		{
+			categories.map((category, index) => (
+				<button
+					aria-controls={`timeline-${category.id}`}
+					aria-selected={index === 0 ? "true" : "false"}
+					class:list={[index === 0 && "is-selected"]}
+					data-tab={category.id}
+					id={`tab-${category.id}`}
+					role="tab"
+					type="button"
+				>
+					{category.label}
+				</button>
+			))
+		}
+	</div>
+	{
+		categories.map((category, index) => {
+			const categoryEntries = entries
+				.filter((entry) => entry.data.category === category.id)
+				.sort((a, b) => a.data.order - b.data.order)
+				.slice(0, compact ? 3 : undefined);
+			return (
+				<section
+					aria-labelledby={`tab-${category.id}`}
+					data-panel={category.id}
+					hidden={index !== 0}
+					id={`timeline-${category.id}`}
+					role="tabpanel"
+				>
+					{!compact && <h2 class="timeline-heading">{category.heading}</h2>}
+					<ol class="timeline-list">
+						{categoryEntries.map((entry) => (
+							<li>
+								<time>{entry.data.period}</time>
+								<div>
+									<div class="timeline-title">
+										<h3>{entry.data.title}</h3>
+										{entry.data.hasDetail && (
+											<a href={`/timeline/${entry.id}/`} aria-label={`Read ${entry.data.title}`}>
+												→
+											</a>
+										)}
+									</div>
+									{!compact && <p>{entry.data.description}</p>}
+								</div>
+							</li>
+						))}
+					</ol>
+				</section>
+			);
+		})
+	}
+</timeline-tabs>
+
+<script>
+	class TimelineTabs extends HTMLElement {
+		connectedCallback() {
+			const tabs = this.querySelectorAll<HTMLButtonElement>("[data-tab]");
+			const panels = this.querySelectorAll<HTMLElement>("[data-panel]");
+
+			for (const tab of tabs) {
+				tab.addEventListener("click", () => {
+					const selectedView = tab.dataset.tab;
+					for (const candidate of tabs) {
+						const selected = candidate === tab;
+						candidate.classList.toggle("is-selected", selected);
+						candidate.setAttribute("aria-selected", String(selected));
+					}
+					for (const panel of panels) panel.hidden = panel.dataset.panel !== selectedView;
+				});
+			}
+		}
+	}
+
+	customElements.define("timeline-tabs", TimelineTabs);
+</script>

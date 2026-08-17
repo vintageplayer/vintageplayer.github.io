@@ -1,0 +1,40 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Detail from "@/layouts/Detail.astro";
+
+export async function getStaticPaths() {
+	const entries = await getCollection("list");
+	return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+interface Props {
+	entry: CollectionEntry<"list">;
+}
+
+const { entry } = Astro.props;
+---
+
+<Detail
+	backHref="/lists/"
+	backLabel="Back to lists"
+	description={entry.data.description}
+	meta={[entry.data.label, `${entry.data.count} items`, `Updated ${entry.data.updated}`]}
+	title={entry.data.title}
+>
+	<ol class="recommendations">
+		{
+			entry.data.items.map((item, index) => (
+				<li>
+					<span>{String(index + 1).padStart(2, "0")}</span>
+					<a href={item.href ?? "#"}>
+						<div>
+							<h2>{item.title}</h2>
+							<p>{item.note}</p>
+						</div>
+						<span class="row-arrow" aria-hidden="true">→</span>
+					</a>
+				</li>
+			))
+		}
+	</ol>
+</Detail>

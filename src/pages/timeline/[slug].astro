@@ -1,0 +1,26 @@
+---
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import Detail from "@/layouts/Detail.astro";
+
+export async function getStaticPaths() {
+	const entries = (await getCollection("timeline")).filter((entry) => entry.data.hasDetail);
+	return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+interface Props {
+	entry: CollectionEntry<"timeline">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Detail
+	backHref="/timeline/"
+	backLabel="Back to timeline"
+	description={entry.data.description}
+	meta={[entry.data.category.replace("-", " "), entry.data.period]}
+	title={entry.data.title}
+>
+	<Content />
+</Detail>

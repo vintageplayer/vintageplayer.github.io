@@ -1,0 +1,13 @@
+---
+import { getCollection } from "astro:content";
+import PageIntro from "@/components/PageIntro.astro";
+import TimelineTabs from "@/components/TimelineTabs.astro";
+import Base from "@/layouts/Base.astro";
+
+const timeline = await getCollection("timeline");
+---
+
+<Base meta={{ title: "Timeline", description: "Things I’ve built, attempted, and learned from." }}>
+	<PageIntro eyebrow="Timeline" title="Things I’ve built, attempted, and learned from." />
+	<TimelineTabs entries={timeline} />
+</Base>
