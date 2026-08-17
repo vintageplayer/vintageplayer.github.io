@@ -6,12 +6,32 @@ const currentPath = Astro.url.pathname;
 
 <header class="site-header">
 	<a class="site-name" href="/">{siteConfig.title}</a>
-	<nav aria-label="Primary navigation">
+	<button
+		aria-controls="primary-navigation"
+		aria-expanded="false"
+		aria-label="Open navigation"
+		class="nav-toggle"
+		type="button"
+	>
+		<span aria-hidden="true" class="nav-toggle-icon"></span>
+	</button>
+	<nav aria-label="Primary navigation" id="primary-navigation">
 		{
 			menuLinks.map((link, index) => (
 				<>
 					{index > 0 && <span aria-hidden="true">·</span>}
-					<a aria-current={currentPath.startsWith(link.path) ? "page" : undefined} href={link.path}>
+					<a
+						aria-current={
+							link.path === "/"
+								? currentPath === "/"
+									? "page"
+									: undefined
+								: currentPath.startsWith(link.path)
+									? "page"
+									: undefined
+						}
+						href={link.path}
+					>
 						{link.title}
 					</a>
 				</>
@@ -19,3 +39,14 @@ const currentPath = Astro.url.pathname;
 		}
 	</nav>
 </header>
+
+<script>
+	const header = document.querySelector<HTMLElement>(".site-header");
+	const toggle = header?.querySelector<HTMLButtonElement>(".nav-toggle");
+
+	toggle?.addEventListener("click", () => {
+		const open = header?.classList.toggle("is-open") ?? false;
+		toggle.setAttribute("aria-expanded", String(open));
+		toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+	});
+</script>

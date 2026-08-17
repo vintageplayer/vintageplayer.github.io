@@ -8,6 +8,7 @@ export const siteConfig = {
 };
 
 export const menuLinks = [
+	{ path: "/", title: "Home" },
 	{ path: "/about/", title: "About" },
 	{ path: "/timeline/", title: "Timeline" },
 	{ path: "/projects/", title: "Projects" },
