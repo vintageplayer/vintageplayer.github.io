@@ -9,6 +9,10 @@
 	--serif: Georgia, "Times New Roman", serif;
 	--sans: Inter, ui-sans-serif, system-ui, sans-serif;
 	--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	--home-serif: "Newsreader", Georgia, serif;
+	--home-mono: "IBM Plex Mono", ui-monospace, monospace;
+	--home-link-line: #c9c4bd;
+	--home-link-hover: #b0283e;
 }
 
 * { box-sizing: border-box; }
@@ -82,8 +86,24 @@ h1, h2, h3, p { margin-top: 0; }
 .about-closing { margin-top: 28px; font: 400 14px/1.65 var(--sans); }
 
 
+/* Home: name, one opening line, the years, links. Two type sizes on one left edge. */
+.site-shell.is-bare { border: 0; }
+.home { display: flex; flex-direction: column; gap: 40px; max-width: 600px; margin: 0 auto; padding: 72px 0 48px; font: 400 19px/1.5 var(--home-serif); }
+.home a { text-decoration: underline; text-decoration-color: var(--home-link-line); text-underline-offset: 3px; }
+.home a:hover { color: var(--home-link-hover); text-decoration-color: var(--home-link-hover); }
+.home-intro h1 { margin: 0 0 8px; font: inherit; font-weight: 500; }
+.home-intro p { margin: 0; color: var(--body); }
+.home-ledger { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.home-ledger li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 16px; align-items: baseline; }
+.home-ledger li > span:first-child, .home-contact { color: var(--muted); font: 400 13px/1.6 var(--home-mono); }
+.home-ledger li.is-now > span:first-child { color: var(--home-link-hover); }
+.home-contact { display: flex; flex-direction: column; gap: 8px; }
+.home-contact nav { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.home-contact a { color: var(--text); }
+.home-contact p { margin: 0; }
+
 @media (prefers-color-scheme: dark) {
-	:root { --page: #202020; --text: #ededed; --muted: #aaa6a1; --soft: #aaa6a1; --body: #c2bfba; --line: #4b4844; --accent: #f06a7f; }
+	:root { --page: #202020; --text: #ededed; --muted: #aaa6a1; --soft: #aaa6a1; --body: #c2bfba; --line: #4b4844; --accent: #f06a7f; --home-link-line: #6a655f; --home-link-hover: #f06a7f; }
 	html { color-scheme: dark; }
 	.site-shell { border-color: #3b3b3b; }
 	.timeline-list::before { background: #57534f; }
@@ -92,6 +112,8 @@ h1, h2, h3, p { margin-top: 0; }
 
 @media (max-width: 680px) {
 	.site-shell { width: 100%; padding: 28px 24px 30px; border: 0; }
+	.home { padding-top: 40px; }
+	.home-ledger li { grid-template-columns: 1fr; gap: 0; }
 	.site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 18px; padding-bottom: 52px; }
 	.nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; }
 	.site-header nav { display: none; grid-column: 1 / -1; flex-direction: column; gap: 0; width: 100%; border-top: 1px solid var(--line); }

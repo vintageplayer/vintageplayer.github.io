@@ -1,6 +1,7 @@
 ---
 import PageIntro from "@/components/PageIntro.astro";
 import Base from "@/layouts/Base.astro";
+import { emailText } from "@/site.config";
 ---
 
 <Base meta={{ title: "About", description: "How I approach work and life outside it." }}>
@@ -27,7 +28,7 @@ import Base from "@/layouts/Base.astro";
 			</section>
 		</div>
 		<p class="about-closing">
-			If any of this resonates, I’d be glad to hear from you at <a class="contact-address" href="mailto:aditya@artsofbaniya.com">aditya@artsofbaniya.com</a>.
+			If any of this resonates, I’d be glad to hear from you at {emailText}.
 		</p>
 	</article>
 </Base>
