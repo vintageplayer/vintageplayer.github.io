@@ -14,7 +14,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 <meta content={description} name="description" />
 <meta content={siteConfig.author} name="author" />
 <link href={canonicalUrl} rel="canonical" />
+<link href="/favicon.ico" rel="icon" sizes="32x32" />
 <link href="/icon.svg" rel="icon" type="image/svg+xml" />
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" />
 <link href="https://fonts.googleapis.com" rel="preconnect" />
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
 <link
