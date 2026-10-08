@@ -2,11 +2,49 @@
 import Base from "@/layouts/Base.astro";
 import { emailText, siteConfig, socialLinks } from "@/site.config";
 
-const ledger = [
-	{ span: "3 years", text: "building petabyte-scale data infrastructure" },
-	{ span: "2 years", text: "building my own product,", link: { href: "https://jiffyscan.xyz/", title: "JiffyScan" } },
-	{ span: "3 years", text: "selling developer tools with", link: { href: "https://devranker.com/", title: "DevRanker" } },
+interface Row {
+	id: string;
+	span: string;
+	text: string;
+	link?: { href: string; title: string };
+	after?: string;
+	detail?: string;
+}
+
+const rows: Row[] = [
 	{
+		id: "data-infra",
+		span: "3 years",
+		text: "building petabyte-scale data infrastructure",
+		detail:
+			"Onboarded the world’s largest retail bank by number of customers, in India, to the platform, which got the startup to a unicorn valuation. First hire on the data platform team, which grew to 14.",
+	},
+	{
+		id: "jiffyscan",
+		span: "2 years",
+		text: "bootstrapping",
+		link: { href: "https://jiffyscan.xyz/", title: "JiffyScan" },
+		after: ", analytics for smart-wallet companies",
+		detail:
+			"Market leader, growing 28% month over month. $600k ARR in six months and multiple acquisition offers.",
+	},
+	{
+		id: "devranker",
+		span: "1.5 years",
+		text: "helping data-infra companies sell to developers with",
+		link: { href: "https://devranker.com/", title: "DevRanker" },
+		detail:
+			"Mined millions of public GitHub repositories and grew to 40 customers before parking it: adoption was moving to agents, and we didn’t want to become another SDR company.",
+	},
+	{
+		id: "reset",
+		span: "1.5 years",
+		text: "stepping back to rebuild how I work",
+		detail:
+			"Time off to work through past mistakes and prepare for what’s next: customer discovery, product iteration, hiring, bringing stakeholders along, and my own planning systems and development setup.",
+	},
+	{
+		id: "now",
 		span: "Now",
 		text: "building",
 		link: { href: "https://devscan.ai/", title: "DevScan" },
@@ -18,24 +56,46 @@ const ledger = [
 <Base bare meta={{ title: siteConfig.title }}>
 	<div class="home">
 		<header class="home-intro">
-			<h1>{siteConfig.author}</h1>
-			<p>I’ve spent eight years in data platforms and developer tools.</p>
+			<img alt="Aditya Agarwal" height="64" src="/aditya.webp" width="64" />
+			<div>
+				<h1>{siteConfig.author}</h1>
+				<p>I’ve spent eight years in data platforms and developer tools.</p>
+			</div>
 		</header>
 		<ol class="home-ledger">
 			{
-				ledger.map((row) => (
-					<li class:list={[row.span === "Now" && "is-now"]}>
+				rows.map((row) => (
+					<li class:list={[row.id === "now" && "is-now"]}>
 						<span>{row.span}</span>
-						<span>
-							{row.text}
-							{row.link && (
-								<>
-									{" "}
-									<a href={row.link.href}>{row.link.title}</a>
-								</>
+						<div>
+							<p>
+								{row.text}
+								{row.link && (
+									<>
+										{" "}
+										<a href={row.link.href}>{row.link.title}</a>
+									</>
+								)}
+								{row.after}
+							</p>
+							{row.detail && (
+								<p class="home-detail" id={`detail-${row.id}`}>
+									{row.detail}
+								</p>
 							)}
-							{row.after}
-						</span>
+						</div>
+						{row.detail && (
+							<button
+								aria-controls={`detail-${row.id}`}
+								aria-expanded="true"
+								aria-label="Details"
+								class="home-toggle"
+								hidden
+								type="button"
+							>
+								<span aria-hidden="true">+</span>
+							</button>
+						)}
 					</li>
 				))
 			}
@@ -48,3 +108,20 @@ const ledger = [
 		</footer>
 	</div>
 </Base>
+
+<script>
+	// Details stay visible without JavaScript; with it, each row starts collapsed behind its toggle.
+	for (const toggle of document.querySelectorAll<HTMLButtonElement>(".home-toggle")) {
+		const detail = document.getElementById(toggle.getAttribute("aria-controls") ?? "");
+		if (!detail) continue;
+		const sign = toggle.querySelector("span");
+		const set = (open: boolean) => {
+			detail.hidden = !open;
+			toggle.setAttribute("aria-expanded", String(open));
+			if (sign) sign.textContent = open ? "−" : "+";
+		};
+		set(false);
+		toggle.hidden = false;
+		toggle.addEventListener("click", () => set(toggle.getAttribute("aria-expanded") !== "true"));
+	}
+</script>
