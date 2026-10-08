@@ -13,11 +13,26 @@ interface Row {
 
 const rows: Row[] = [
 	{
-		id: "data-infra",
-		span: "3 years",
-		text: "building petabyte-scale data infrastructure",
+		id: "now",
+		span: "Now",
+		text: "building",
+		link: { href: "https://devscan.ai/", title: "DevScan" },
+		after: ", for agent-driven sales: selling to coding agents instead of developers",
+	},
+	{
+		id: "reset",
+		span: "1.5 years",
+		text: "stepping back to rebuild how I work",
 		detail:
-			"Onboarded the largest retail bank by number of customers to the platform, which got the startup to a unicorn valuation. First hire on the data platform team, which grew to 14.",
+			"Time off to work through past mistakes and prepare for what’s next: customer discovery, product iteration, hiring, bringing stakeholders along, and my own planning systems and development setup.",
+	},
+	{
+		id: "devranker",
+		span: "1.5 years",
+		text: "helping data-infra companies sell to developers with",
+		link: { href: "https://devranker.com/", title: "DevRanker" },
+		detail:
+			"Mined millions of public GitHub repositories and grew to 40 customers before parking it: adoption was moving to agents, and we didn’t want to become another SDR company.",
 	},
 	{
 		id: "jiffyscan",
@@ -29,26 +44,11 @@ const rows: Row[] = [
 			"Market leader, growing 28% month over month. $600k ARR in six months and multiple acquisition offers.",
 	},
 	{
-		id: "devranker",
-		span: "1.5 years",
-		text: "helping data-infra companies sell to developers with",
-		link: { href: "https://devranker.com/", title: "DevRanker" },
+		id: "data-infra",
+		span: "3 years",
+		text: "building petabyte-scale data infrastructure",
 		detail:
-			"Mined millions of public GitHub repositories and grew to 40 customers before parking it: adoption was moving to agents, and we didn’t want to become another SDR company.",
-	},
-	{
-		id: "reset",
-		span: "1.5 years",
-		text: "stepping back to rebuild how I work",
-		detail:
-			"Time off to work through past mistakes and prepare for what’s next: customer discovery, product iteration, hiring, bringing stakeholders along, and my own planning systems and development setup.",
-	},
-	{
-		id: "now",
-		span: "Now",
-		text: "building",
-		link: { href: "https://devscan.ai/", title: "DevScan" },
-		after: ", for agent-driven sales: selling to coding agents instead of developers",
+			"Onboarded the largest retail bank by number of customers to the platform, which got the startup to a unicorn valuation. First hire on the data platform team, which grew to 14.",
 	},
 ];
 ---

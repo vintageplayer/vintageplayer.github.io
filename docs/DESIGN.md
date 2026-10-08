@@ -10,6 +10,8 @@ question at a time; the built home page is now the reference.
 - **Space, not boxes.** Group with spacing; no cards, borders or dividers on the home page.
 - **One reading edge.** Spans (`3 years`, `Now`) sit in a fixed left column so every line of
   text starts at the same edge. On phones the span moves above its line.
+- **Newest first.** The ledger opens with `Now`, so what is current is read first; the
+  earlier years follow in reverse order.
 - **Few type sizes.** 19px serif for content, 16px serif for details, 13px mono for spans,
   links and the email.
 - **Detail on demand, everywhere.** Extra detail opens in place behind a `+` button, which
