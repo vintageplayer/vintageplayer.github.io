@@ -73,7 +73,9 @@ const rows: Row[] = [
 								{row.link && (
 									<>
 										{" "}
-										<a href={row.link.href}>{row.link.title}</a>
+										<a href={row.link.href} rel="noopener" target="_blank">
+											{row.link.title}
+										</a>
 									</>
 								)}
 								{row.after}
@@ -102,7 +104,11 @@ const rows: Row[] = [
 		</ol>
 		<footer class="home-contact">
 			<nav aria-label="Elsewhere">
-				{socialLinks.map((link) => <a href={link.href}>{link.title}</a>)}
+				{socialLinks.map((link) => (
+					<a href={link.href} rel="noopener" target="_blank">
+						{link.title}
+					</a>
+				))}
 			</nav>
 			<p>{emailText}</p>
 		</footer>
