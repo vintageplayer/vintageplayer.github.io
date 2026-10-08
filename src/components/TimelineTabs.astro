@@ -3,30 +3,26 @@ import type { CollectionEntry } from "astro:content";
 
 interface Props {
 	entries: CollectionEntry<"timeline">[];
-	compact?: boolean;
 }
 
-const { entries, compact = false } = Astro.props;
+const { entries } = Astro.props;
 const categories = [
 	{
 		id: "professional",
 		label: "Professional",
-		heading: "From large-scale engineering to building companies.",
 	},
 	{
 		id: "before-graduation",
 		label: "Before graduation",
-		heading: "The early evidence of initiative and resourcefulness.",
 	},
 	{
 		id: "life",
 		label: "Life outside work",
-		heading: "The experiences and interests behind the résumé.",
 	},
 ] as const;
 ---
 
-<timeline-tabs class:list={["timeline-tabs-block", compact && "is-compact"]}>
+<timeline-tabs class="timeline-tabs-block">
 	<div class="tab-list" role="tablist" aria-label="Timeline view">
 		{
 			categories.map((category, index) => (
@@ -48,8 +44,7 @@ const categories = [
 		categories.map((category, index) => {
 			const categoryEntries = entries
 				.filter((entry) => entry.data.category === category.id)
-				.sort((a, b) => a.data.order - b.data.order)
-				.slice(0, compact ? 3 : undefined);
+				.sort((a, b) => a.data.order - b.data.order);
 			return (
 				<section
 					aria-labelledby={`tab-${category.id}`}
@@ -58,22 +53,11 @@ const categories = [
 					id={`timeline-${category.id}`}
 					role="tabpanel"
 				>
-					{!compact && <h2 class="timeline-heading">{category.heading}</h2>}
 					<ol class="timeline-list">
 						{categoryEntries.map((entry) => (
 							<li>
 								<time>{entry.data.period}</time>
-								<div>
-									<div class="timeline-title">
-										<h3>{entry.data.title}</h3>
-										{entry.data.hasDetail && (
-											<a href={`/timeline/${entry.id}/`} aria-label={`Read ${entry.data.title}`}>
-												→
-											</a>
-										)}
-									</div>
-									{!compact && <p>{entry.data.description}</p>}
-								</div>
+								<h3>{entry.data.title}</h3>
 							</li>
 						))}
 					</ol>

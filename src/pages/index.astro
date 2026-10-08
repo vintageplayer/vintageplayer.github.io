@@ -13,21 +13,19 @@ const timeline = await getCollection("timeline");
 			I’m drawn to unfamiliar problems, ambitious people, and paths that are not obvious.
 		</p>
 		<nav class="hero-actions" aria-label="Homepage actions">
-			<a class="primary-action" href="/timeline/">Explore my timeline →</a>
-			<a href="#selected-timeline">View selected timeline ↓</a>
+			<a class="primary-action" href="#timeline">See the timeline ↓</a>
 			<a href="#contact">Let’s talk →</a>
 		</nav>
 	</section>
 
-	<section class="home-section" id="selected-timeline">
+	<section class="home-section" id="timeline">
 		<header class="section-heading">
 			<div>
-				<p class="eyebrow">Selected timeline</p>
+				<p class="eyebrow">Timeline</p>
 				<h2>A few points along the way</h2>
 			</div>
-			<a class="text-link" href="/timeline/">View full timeline →</a>
 		</header>
-		<TimelineTabs entries={timeline} compact />
+		<TimelineTabs entries={timeline} />
 	</section>
 
 	<section class="home-section home-copy">
@@ -43,7 +41,7 @@ const timeline = await getCollection("timeline");
 		<p class="eyebrow">Let’s talk</p>
 		<h2>Good conversations are always welcome.</h2>
 		<p>
-			The best way to reach me is <span class="contact-address">hello at example dot com</span>.
+			The best way to reach me is <a class="contact-address" href="mailto:aditya@artsofbaniya.com">aditya@artsofbaniya.com</a>.
 		</p>
 	</section>
 </Base>
