@@ -1,6 +1,7 @@
 ---
 import PageIntro from "@/components/PageIntro.astro";
 import Base from "@/layouts/Base.astro";
+import { emailText } from "@/site.config";
 ---
 
 <Base meta={{ title: "About", description: "How I approach work and life outside it." }}>
@@ -24,9 +25,10 @@ import Base from "@/layouts/Base.astro";
 					I value curiosity, new places, long conversations, and interests that have no obligation to
 					become productive.
 				</p>
-				<a class="text-link" href="/photos/">Photos and places →</a>
 			</section>
 		</div>
-		<p class="about-closing">If any of this resonates, I’d be glad to hear from you.</p>
+		<p class="about-closing">
+			If any of this resonates, I’d be glad to hear from you at {emailText}.
+		</p>
 	</article>
 </Base>

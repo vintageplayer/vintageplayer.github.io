@@ -6,9 +6,11 @@ import type { SiteMeta } from "@/types";
 
 interface Props {
 	meta: SiteMeta;
+	/** Leave out the site header and footer, for pages that carry their own. */
+	bare?: boolean;
 }
 
-const { meta } = Astro.props;
+const { meta, bare = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,10 +20,10 @@ const { meta } = Astro.props;
 	</head>
 	<body>
 		<a class="skip-link" href="#main">Skip to content</a>
-		<div class="site-shell">
-			<Header />
+		<div class:list={["site-shell", bare && "is-bare"]}>
+			{!bare && <Header />}
 			<main id="main"><slot /></main>
-			<Footer />
+			{!bare && <Footer />}
 		</div>
 	</body>
 </html>

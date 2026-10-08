@@ -1,7 +1,8 @@
 # Aditya Agarwal — Personal Site
 
-An Astro-based personal website built around a concise homepage, switchable timeline, projects,
-about page, and curated lists.
+The Astro source for Aditya Agarwal's personal site. The home page is a short ledger of the
+last eight years in data platforms and developer tools; each row opens to the detail behind
+it. It deploys to GitHub Pages from `master`.
 
 ## Commands
 
@@ -12,6 +13,8 @@ pnpm check
 pnpm build
 ```
 
-Content lives in `content/timeline`, `content/projects`, and `content/lists`. The current entries are
-representative placeholders intended to make the approved layouts reviewable before full content
-migration.
+## Content
+
+Home page copy lives in `src/pages/index.astro`; links and the written-out email in
+`src/site.config.ts`. Publish only confirmed facts: the site carries no placeholder content.
+The look and its rules are in `docs/DESIGN.md`.
