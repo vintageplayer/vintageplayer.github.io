@@ -11,8 +11,9 @@ question at a time; the built home page is now the reference.
 - **Catalog pages** (Projects, Ideas, Domain names) open with one plain sentence, then quiet mono
   group labels. Statuses are honest (`live`, `parked`, `not maintained`); a row with no
   confirmed line shows just its name. Link only what has something to see.
-- **Ideas filter.** Category links with counts sit above a numbered list; the category
-  appears in the left margin on the first idea of each group. With JavaScript the links
+- **Ideas filter.** Tag links with counts sit above a numbered list. An idea can carry
+  several tags: its first tag places it in the list and appears in the left margin on the
+  first idea of each group; any of its tags matches the filter. With JavaScript the links
   filter (selected: bold, accent underline); without it they jump to the group.
 - **Space, not boxes.** Group with spacing; no cards, borders or dividers on the home page.
 - **One reading edge.** Spans (`3 years`, `Now`) sit in a fixed left column so every line of

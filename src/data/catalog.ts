@@ -26,7 +26,7 @@ export const projectGroups: { title: string; projects: Project[] }[] = [
 			{
 				name: "FamilyDrawer",
 				status: "in development, not yet usable",
-				line: "Low-pressure, genuine connection between families living in different cities and across generations.",
+				line: "Foster low-pressure, genuine connection between families living in different cities and across generations.",
 			},
 		],
 	},
@@ -50,37 +50,44 @@ export const projectGroups: { title: string; projects: Project[] }[] = [
 ];
 
 export interface Idea {
-	category: string;
+	/** The first tag places the idea in the list; any tag matches the filter. */
+	tags: string[];
 	text: string;
 }
 
-// Kept in category order so each category's ideas sit together.
+// Kept in order of first tag so each group's ideas sit together.
 export const ideas: Idea[] = [
 	{
-		category: "Social",
+		tags: ["Sports", "Social"],
 		text: "Finding a casual pickup game in a new city shouldn’t depend on already being in the right WhatsApp group.",
 	},
 	{
-		category: "Social",
-		text: "Date and friend plans built around doing something together, not another round of drinks.",
-	},
-	{ category: "Work", text: "Keeping professional relationships warm without turning people into a CRM." },
-	{
-		category: "Startups",
-		text: "Helping sponsors and event organizers find each other, and the events actually worth showing up to.",
+		tags: ["Social"],
+		text: "An in-person group or date activity planner that works around your mood and budget, even at the last minute.",
 	},
 	{
-		category: "Startups",
-		text: "Turning what’s trending into content, at a pace a small team can keep up with.",
+		tags: ["Relationships"],
+		text: "Building and maintaining professional and personal relationships, especially as a founder.",
 	},
 	{
-		category: "Agents",
-		text: "Agentic shopping that starts from something you already do, like knowing what’s in your wardrobe.",
+		tags: ["Startups"],
+		text: "Bringing event spaces, organizers and sponsors together to host fun, in-person startup events in SF.",
 	},
-	{ category: "Self", text: "A place to practise hard conversations and see how you come across." },
 	{
-		category: "Community",
-		text: "Grounded, practical advice for men, from people who have been through the same things.",
+		tags: ["Startups"],
+		text: "A content growth machine that turns trending content on a topic into new content for a brand or product.",
+	},
+	{
+		tags: ["Fashion"],
+		text: "An app to manage your wardrobe and discover new outfit ideas for your style.",
+	},
+	{
+		tags: ["Self"],
+		text: "An app or community to practise conversations and build social skills, like handling difficult ones.",
+	},
+	{
+		tags: ["Community"],
+		text: "Grounded, practical advice for men, and a community for guidance from people who have been through the same situations.",
 	},
 ];
 

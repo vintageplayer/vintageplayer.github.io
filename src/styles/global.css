@@ -98,7 +98,7 @@ h1, h2, h3, p { margin-top: 0; }
 .idea-filter a span { color: var(--muted); }
 .page .idea-filter a[aria-current] { color: var(--text); font-weight: 600; text-decoration: underline 2px var(--home-link-hover); }
 .idea-list { gap: 10px; margin-top: -16px; font-size: 18px; line-height: 1.45; }
-.idea-list li { display: grid; grid-template-columns: 96px 28px minmax(0, 1fr); gap: 12px; align-items: baseline; scroll-margin-top: 16px; }
+.idea-list li { display: grid; grid-template-columns: 112px 28px minmax(0, 1fr); gap: 12px; align-items: baseline; scroll-margin-top: 16px; }
 .idea-list li.is-first:not(.is-lead) { padding-top: 12px; border-top: 1px solid var(--line); }
 .idea-list li[hidden] { display: none; }
 .idea-category, .idea-number { color: var(--muted); font: 400 13px/1.6 var(--home-mono); }
