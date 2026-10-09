@@ -1,6 +1,6 @@
 ---
 import Base from "@/layouts/Base.astro";
-import { emailText, siteConfig, socialLinks } from "@/site.config";
+import { siteConfig } from "@/site.config";
 
 interface Row {
 	id: string;
@@ -53,14 +53,11 @@ const rows: Row[] = [
 ];
 ---
 
-<Base bare meta={{ title: siteConfig.title }}>
+<Base meta={{ title: siteConfig.title }}>
 	<div class="home">
 		<header class="home-intro">
 			<img alt="Aditya Agarwal" height="64" src="/aditya.webp" width="64" />
-			<div>
-				<h1>{siteConfig.author}</h1>
-				<p>I’ve spent eight years in data platforms and developer tools.</p>
-			</div>
+			<h1>I’ve spent eight years in data platforms and developer tools.</h1>
 		</header>
 		<ol class="home-ledger">
 			{
@@ -102,16 +99,6 @@ const rows: Row[] = [
 				))
 			}
 		</ol>
-		<footer class="home-contact">
-			<nav aria-label="Elsewhere">
-				{socialLinks.map((link) => (
-					<a href={link.href} rel="noopener" target="_blank">
-						{link.title}
-					</a>
-				))}
-			</nav>
-			<p>{emailText}</p>
-		</footer>
 	</div>
 </Base>
 

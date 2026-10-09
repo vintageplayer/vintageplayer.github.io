@@ -1,0 +1,71 @@
+---
+import { ideas } from "@/data/catalog";
+import Base from "@/layouts/Base.astro";
+
+const slug = (tag: string) => `tag-${tag.toLowerCase()}`;
+const primary = (index: number) => ideas[index]?.tags[0];
+const tags = [...new Set(ideas.flatMap((idea) => idea.tags))];
+const count = (tag: string) => ideas.filter((idea) => idea.tags.includes(tag)).length;
+---
+
+<Base meta={{ title: "Ideas", description: "Problems Aditya Agarwal would like to see solved." }}>
+	<div class="catalog">
+		<h1 class="catalog-intro">Problems I’d like to see solved, by me or anyone else.</h1>
+		<nav aria-label="Tags" class="idea-filter">
+			<a aria-current="true" data-filter="all" href="#ideas">All <span>{ideas.length}</span></a>
+			{
+				tags.map((tag) => (
+					<a data-filter={tag} href={`#${slug(tag)}`}>
+						{tag} <span>{count(tag)}</span>
+					</a>
+				))
+			}
+		</nav>
+		<ol class="idea-list" id="ideas">
+			{
+				ideas.map((idea, index) => {
+					const first = primary(index - 1) !== idea.tags[0];
+					return (
+						<li class:list={[first && "is-first"]} data-tags={idea.tags.join("|")}>
+							<span class="idea-category" id={first ? slug(idea.tags[0] ?? "") : undefined}>
+								{first ? idea.tags[0] : ""}
+							</span>
+							<span class="idea-number">{String(index + 1).padStart(2, "0")}</span>
+							<span>{idea.text}</span>
+						</li>
+					);
+				})
+			}
+		</ol>
+	</div>
+</Base>
+
+<script>
+	// Without JavaScript the tag links jump to each group; with it they filter the list.
+	const links = document.querySelectorAll<HTMLAnchorElement>(".idea-filter a");
+	const rows = [...document.querySelectorAll<HTMLLIElement>(".idea-list li")];
+	const labels = rows.map((row) => row.querySelector<HTMLElement>(".idea-category"));
+	const original = labels.map((label) => label?.textContent ?? "");
+
+	for (const link of links) {
+		link.addEventListener("click", (event) => {
+			event.preventDefault();
+			const filter = link.dataset.filter ?? "all";
+			for (const other of links) {
+				if (other === link) other.setAttribute("aria-current", "true");
+				else other.removeAttribute("aria-current");
+			}
+			let firstShown = true;
+			rows.forEach((row, index) => {
+				const show = filter === "all" || (row.dataset.tags ?? "").split("|").includes(filter);
+				row.hidden = !show;
+				row.classList.toggle("is-lead", show && firstShown);
+				const label = labels[index];
+				// Filtered to one tag, name it once on the first row; otherwise restore the groups.
+				if (label) label.textContent = filter === "all" ? (original[index] ?? "") : show && firstShown ? filter : "";
+				if (show) firstShown = false;
+			});
+		});
+	}
+	rows[0]?.classList.add("is-lead");
+</script>

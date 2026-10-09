@@ -9,8 +9,9 @@ export const siteConfig = {
 };
 
 export const menuLinks = [
-	{ path: "/", title: "Home" },
-	{ path: "/about/", title: "About" },
+	{ path: "/projects/", title: "Projects" },
+	{ path: "/ideas/", title: "Ideas" },
+	{ path: "/domains/", title: "Domain names" },
 ];
 
 export const socialLinks = [
