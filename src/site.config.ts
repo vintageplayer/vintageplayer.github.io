@@ -11,7 +11,7 @@ export const siteConfig = {
 export const menuLinks = [
 	{ path: "/projects/", title: "Projects" },
 	{ path: "/ideas/", title: "Ideas" },
-	{ path: "/domains/", title: "Domains" },
+	{ path: "/domains/", title: "Domain names" },
 ];
 
 export const socialLinks = [

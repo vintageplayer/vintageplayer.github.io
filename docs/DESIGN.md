@@ -6,9 +6,9 @@ question at a time; the built home page is now the reference.
 ## Principles
 
 - **Content first, minimal frame.** Every page shares one thin header (name left, Projects ·
-  Ideas · Domains right, current page in the accent colour) and the same contact footer
+  Ideas · Domain names right, current page in the accent colour) and the same contact footer
   (GitHub, X, LinkedIn, written-out email). Nothing else frames the content.
-- **Catalog pages** (Projects, Ideas, Domains) open with one plain sentence, then quiet mono
+- **Catalog pages** (Projects, Ideas, Domain names) open with one plain sentence, then quiet mono
   group labels. Statuses are honest (`live`, `parked`, `not maintained`); a row with no
   confirmed line shows just its name. Link only what has something to see.
 - **Ideas filter.** Category links with counts sit above a numbered list; the category
