@@ -29,6 +29,9 @@ question at a time; the built home page is now the reference.
   details show.
 - **External links open in a new tab** (`target="_blank" rel="noopener"`); links within the
   site stay in the same tab.
+- **Home stays clean.** Backers get one quiet line under the opening sentence; earlier
+  achievements live on Side quests (`/side-quests/`, not in the menu), linked once under the
+  ledger.
 - **Facts only.** No placeholder copy or links. The email is written out
   (`aditya at artsofbaniya dot com`), not linked, so simple scrapers skip it.
 
