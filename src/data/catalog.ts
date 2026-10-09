@@ -95,7 +95,7 @@ export interface Domain {
 	name: string;
 	href?: string;
 	line?: string;
-	/** "building" gets an accent label; "retired" strikes the name through. */
+	/** "building" gets an accent label; "retired" strikes the line through. */
 	status?: "building" | "retired";
 }
 
@@ -112,7 +112,6 @@ export const domainGroups: { title: string; domains: Domain[] }[] = [
 			{ name: "SearchGuests.com", href: "https://searchguests.com/", line: "Search and filter the attendees of a Luma event." },
 			{
 				name: "FamilyDrawer.com",
-				status: "building",
 				line: "Low-pressure connection between family generations living in different cities.",
 			},
 			{ name: "DevRanker.com", href: "https://devranker.com/", status: "retired", line: "Developer-adoption signals for data-infra companies." },
@@ -122,19 +121,23 @@ export const domainGroups: { title: string; domains: Domain[] }[] = [
 	{
 		title: "Waiting for an idea",
 		domains: [
+			{ name: "yc.app", line: "Parked for something built for founders." },
+			{ name: "LetsIRL.com", href: "https://letsirl.com/", line: "Improve the in-person networking experience." },
+			{
+				name: "LLMVisible.com",
+				href: "https://llmvisible.com/",
+				line: "Boost the accurate presence of brands within language models.",
+			},
+			{ name: "KookieZillennial.com", line: "In case I ever decide to share my experiences, filter-free." },
 			{ name: "ExperimentOS.ai", line: "Running and keeping track of product and AI experiments." },
+			{ name: "WarmNudge.com", line: "Nudges to help maintain your professional and personal relationships." },
 			{ name: "HonestCustomer.com", line: "Candid customer feedback and interviews." },
 			{ name: "MomProof.ai", status: "retired", line: "Inspired by The Mom Test. Replaced by HonestCustomer.com." },
-			{ name: "WarmNudge.com", line: "Nudges to help maintain your professional and personal relationships." },
 			{
 				name: "DailyStandupBuddy.com",
 				line: "A community for solo founders and the self-employed: accountability, routine and company.",
 			},
 			{ name: "CryptoInheritance.xyz", line: "Passing crypto assets on to family." },
-			{ name: "yc.app", line: "Parked for something built for founders." },
-			{ name: "KookieZillennial.com", line: "In case I ever decide to share my experiences, filter-free." },
-			{ name: "LetsIRL.com", href: "https://letsirl.com/" },
-			{ name: "LLMVisible.com", href: "https://llmvisible.com/" },
 		],
 	},
 ];

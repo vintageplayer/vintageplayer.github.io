@@ -15,8 +15,7 @@ import Base from "@/layouts/Base.astro";
 					<ul class="domain-list">
 						{group.domains.map((domain) => (
 							<li>
-								<span class:list={["domain-name", domain.status === "retired" && "is-retired"]}>
-									{domain.status === "retired" && <span class="visually-hidden">Retired: </span>}
+								<span class="domain-name">
 									{domain.href ? (
 										<a
 											href={domain.href}
@@ -30,8 +29,9 @@ import Base from "@/layouts/Base.astro";
 									)}
 								</span>
 								{(domain.line || domain.status === "building") && (
-									<span class="catalog-line">
+									<span class:list={["catalog-line", domain.status === "retired" && "is-retired"]}>
 										{domain.status === "building" && <span class="domain-building">building</span>}
+										{domain.status === "retired" && <span class="visually-hidden">Retired: </span>}
 										{domain.line}
 									</span>
 								)}
