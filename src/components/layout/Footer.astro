@@ -5,7 +5,11 @@ import { emailText, socialLinks } from "@/site.config";
 <footer class="site-footer">
 	<span>© {new Date().getFullYear()} Aditya Agarwal</span>
 	<nav aria-label="Social links">
-		{socialLinks.map((link) => <a href={link.href}>{link.title}</a>)}
+		{socialLinks.map((link) => (
+			<a href={link.href} rel="noopener" target="_blank">
+				{link.title}
+			</a>
+		))}
 		<span>{emailText}</span>
 	</nav>
 </footer>

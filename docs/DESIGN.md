@@ -17,6 +17,8 @@ question at a time; the built home page is now the reference.
 - **Detail on demand, everywhere.** Extra detail opens in place behind a `+` button, which
   works by tap and keyboard. Never hover-only: phones cannot hover. Without JavaScript the
   details show.
+- **External links open in a new tab** (`target="_blank" rel="noopener"`); links within the
+  site stay in the same tab.
 - **Facts only.** No placeholder copy or links. The email is written out
   (`aditya at artsofbaniya dot com`), not linked, so simple scrapers skip it.
 
