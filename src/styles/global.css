@@ -77,8 +77,9 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* Home: photo and opening line, then the ledger. */
 .home { display: flex; flex-direction: column; gap: 40px; }
-.home-intro h1 { margin: 0; font: inherit; color: var(--text); }
-.home-intro p { margin: 4px 0 0; color: var(--body); font-size: 16px; line-height: 1.5; }
+.home-intro h1 { margin: 0; font: inherit; font-weight: 500; color: var(--text); }
+.home-intro p { margin: 4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.page .home-intro p a { color: var(--muted); }
 .home-more { margin: -16px 0 0; padding-left: 104px; color: var(--body); font-size: 16px; }
 .side-quests { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .side-quests li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 16px; align-items: baseline; }
