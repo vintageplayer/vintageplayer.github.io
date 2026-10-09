@@ -148,3 +148,21 @@ export const domainGroups: { title: string; domains: Domain[] }[] = [
 		],
 	},
 ];
+
+export interface SideQuest {
+	when: string;
+	text: string;
+}
+
+// Newest first, like the home page ledger.
+export const sideQuests: SideQuest[] = [
+	{ when: "2021–22", text: "Won $30k+ in prizes across national and international hackathons." },
+	{
+		when: "2018",
+		text: "Named one of India’s 33 brightest engineers, out of 26,000+, in the first Economic Times Campus Stars.",
+	},
+	{ when: "Age 15", text: "Sold 5 bitcoins for $5." },
+	{ when: "Age 13", text: "Taught myself to program, and have been building apps ever since." },
+	{ when: "Age 12", text: "Ran a rubber-band reselling business at a 400% profit." },
+	{ when: "Age 8", text: "Started my first business: a stall at the Diwali fair, every year." },
+];

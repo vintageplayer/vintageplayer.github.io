@@ -78,6 +78,11 @@ h1, h2, h3, p { margin-top: 0; }
 /* Home: photo and opening line, then the ledger. */
 .home { display: flex; flex-direction: column; gap: 40px; }
 .home-intro h1 { margin: 0; font: inherit; color: var(--text); }
+.home-intro p { margin: 4px 0 0; color: var(--body); font-size: 16px; line-height: 1.5; }
+.home-more { margin: -16px 0 0; padding-left: 104px; color: var(--body); font-size: 16px; }
+.side-quests { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.side-quests li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 16px; align-items: baseline; }
+.side-quests li > span:first-child { color: var(--muted); font: 400 13px/1.6 var(--home-mono); }
 
 /* Projects, Ideas, Domains: an opening line, then quiet groups. */
 .catalog { display: flex; flex-direction: column; gap: 40px; }
@@ -112,6 +117,8 @@ h1, h2, h3, p { margin-top: 0; }
 	}
 
 @media (max-width: 680px) {
+	.home-more { padding-left: 0; }
+	.side-quests li { grid-template-columns: 1fr; gap: 0; }
 	.page { gap: 48px; padding-top: 28px; }
 	.domain-list li { grid-template-columns: 1fr; }
 	.idea-list li { grid-template-columns: 28px minmax(0, 1fr); gap: 2px 12px; }

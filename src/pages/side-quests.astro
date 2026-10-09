@@ -1,0 +1,21 @@
+---
+import { sideQuests } from "@/data/catalog";
+import Base from "@/layouts/Base.astro";
+---
+
+<Base meta={{ title: "Side quests", description: "A few other things Aditya Agarwal has managed along the way." }}>
+	<div class="catalog">
+		<h1 class="catalog-intro">Side quests: a few other things I’ve managed along the way.</h1>
+		<ol class="side-quests">
+			{
+				sideQuests.map((quest) => (
+					<li>
+						<span>{quest.when}</span>
+						<span>{quest.text}</span>
+					</li>
+				))
+			}
+		</ol>
+		<p class="catalog-line"><a href="/">← Back to the main story</a></p>
+	</div>
+</Base>
