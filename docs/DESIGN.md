@@ -11,6 +11,8 @@ question at a time; the built home page is now the reference.
 - **Catalog pages** (Projects, Ideas, Domain names) open with one plain sentence, then quiet mono
   group labels. Statuses are honest (`live`, `parked`, `not maintained`); a row with no
   confirmed line shows just its name. Link only what has something to see.
+  On Domain names, a project being built gets a small accent `building` label and a retired
+  name is struck through (with a screen-reader "Retired:" prefix).
 - **Ideas filter.** Tag links with counts sit above a numbered list. An idea can carry
   several tags: its first tag places it in the list and appears in the left margin on the
   first idea of each group; any of its tags matches the filter. With JavaScript the links

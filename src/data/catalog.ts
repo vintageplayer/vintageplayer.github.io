@@ -95,22 +95,27 @@ export interface Domain {
 	name: string;
 	href?: string;
 	line?: string;
+	/** "building" gets an accent label; "retired" strikes the name through. */
+	status?: "building" | "retired";
 }
 
 export const domainGroups: { title: string; domains: Domain[] }[] = [
 	{
 		title: "Used for a project",
 		domains: [
-			{ name: "DevScan.ai", href: "https://devscan.ai/", line: "Selling to coding agents. Building now." },
-			{ name: "SearchGuests.com", href: "https://searchguests.com/", line: "Enriched guest lists for conferences." },
-			{ name: "FamilyDrawer.com", line: "A calm place for family updates. In development." },
 			{
-				name: "DevRanker.com",
-				href: "https://devranker.com/",
-				line: "Developer-adoption signals for data-infra companies. Parked.",
+				name: "DevScan.ai",
+				href: "https://devscan.ai/",
+				status: "building",
+				line: "Agents for sign-ups and payments.",
 			},
-			{ name: "LetsIRL.com", href: "https://letsirl.com/" },
-			{ name: "LLMVisible.com", href: "https://llmvisible.com/" },
+			{ name: "SearchGuests.com", href: "https://searchguests.com/", line: "Search and filter the attendees of a Luma event." },
+			{
+				name: "FamilyDrawer.com",
+				status: "building",
+				line: "Low-pressure connection between family generations living in different cities.",
+			},
+			{ name: "DevRanker.com", href: "https://devranker.com/", status: "retired", line: "Developer-adoption signals for data-infra companies." },
 			{ name: "ArtsOfBaniya.com", href: "/", line: "This site." },
 		],
 	},
@@ -119,12 +124,17 @@ export const domainGroups: { title: string; domains: Domain[] }[] = [
 		domains: [
 			{ name: "ExperimentOS.ai", line: "Running and keeping track of product and AI experiments." },
 			{ name: "HonestCustomer.com", line: "Candid customer feedback and interviews." },
-			{ name: "WarmNudge.com", line: "Gentle reminders to follow up with people." },
-			{ name: "DailyStandupBuddy.com", line: "A lightweight assistant for daily standups." },
-			{ name: "MomProof.ai", line: "Products and instructions anyone can follow." },
+			{ name: "MomProof.ai", status: "retired", line: "Inspired by The Mom Test. Replaced by HonestCustomer.com." },
+			{ name: "WarmNudge.com", line: "Nudges to help maintain your professional and personal relationships." },
+			{
+				name: "DailyStandupBuddy.com",
+				line: "A community for solo founders and the self-employed: accountability, routine and company.",
+			},
 			{ name: "CryptoInheritance.xyz", line: "Passing crypto assets on to family." },
-			{ name: "yc.app", line: "A short name for something for founders." },
-			{ name: "KookieZillennial.com", line: "A name looking for its publication or brand." },
+			{ name: "yc.app", line: "Parked for something built for founders." },
+			{ name: "KookieZillennial.com", line: "In case I ever decide to share my experiences, filter-free." },
+			{ name: "LetsIRL.com", href: "https://letsirl.com/" },
+			{ name: "LLMVisible.com", href: "https://llmvisible.com/" },
 		],
 	},
 ];

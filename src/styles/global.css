@@ -93,6 +93,10 @@ h1, h2, h3, p { margin-top: 0; }
 .domain-list li { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 2px 20px; align-items: baseline; }
 .domain-name { font: 400 14px/1.6 var(--home-mono); }
 .domain-list .catalog-line { margin: 0; }
+.domain-name.is-retired { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--muted); }
+.page .domain-name.is-retired a { color: var(--muted); text-decoration: line-through; }
+.domain-building { margin-right: 8px; color: var(--home-link-hover); font: 400 13px/1.6 var(--home-mono); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .idea-filter { display: flex; flex-wrap: wrap; gap: 4px 18px; font: 400 13px/1.6 var(--home-mono); }
 .page .idea-filter a { padding: 6px 0; color: var(--muted); text-decoration: none; text-underline-offset: 6px; }
 .idea-filter a span { color: var(--muted); }
