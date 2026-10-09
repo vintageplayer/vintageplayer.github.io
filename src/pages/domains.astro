@@ -29,10 +29,17 @@ import Base from "@/layouts/Base.astro";
 									)}
 								</span>
 								{(domain.line || domain.status === "building") && (
-									<span class:list={["catalog-line", domain.status === "retired" && "is-retired"]}>
+									<span class="catalog-line">
 										{domain.status === "building" && <span class="domain-building">building</span>}
-										{domain.status === "retired" && <span class="visually-hidden">Retired: </span>}
-										{domain.line}
+										{domain.status === "retired" ? (
+											<>
+												<span class="visually-hidden">Retired: </span>
+												<span class="is-retired">{domain.line}</span>
+											</>
+										) : (
+											domain.line
+										)}
+										{domain.note && ` ${domain.note}`}
 									</span>
 								)}
 							</li>

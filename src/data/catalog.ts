@@ -97,6 +97,8 @@ export interface Domain {
 	line?: string;
 	/** "building" gets an accent label; "retired" strikes the line through. */
 	status?: "building" | "retired";
+	/** Shown after the line and never struck through, e.g. what replaced a retired idea. */
+	note?: string;
 }
 
 export const domainGroups: { title: string; domains: Domain[] }[] = [
@@ -132,7 +134,12 @@ export const domainGroups: { title: string; domains: Domain[] }[] = [
 			{ name: "ExperimentOS.ai", line: "Running and keeping track of product and AI experiments." },
 			{ name: "WarmNudge.com", line: "Nudges to help maintain your professional and personal relationships." },
 			{ name: "HonestCustomer.com", line: "Candid customer feedback and interviews." },
-			{ name: "MomProof.ai", status: "retired", line: "Inspired by The Mom Test. Replaced by HonestCustomer.com." },
+			{
+				name: "MomProof.ai",
+				status: "retired",
+				line: "Inspired by The Mom Test.",
+				note: "Replaced by HonestCustomer.com.",
+			},
 			{
 				name: "DailyStandupBuddy.com",
 				line: "A community for solo founders and the self-employed: accountability, routine and company.",
