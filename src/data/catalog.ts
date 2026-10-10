@@ -166,3 +166,51 @@ export const sideQuests: SideQuest[] = [
 	{ when: "Age 12", text: "Ran a rubber-band reselling business at a 400% profit." },
 	{ when: "Age 8", text: "Started my first business: a stall at the Diwali fair, every year." },
 ];
+
+export interface Pastime {
+	text: string;
+	note?: string;
+}
+
+export const offWork: { title: string; items: Pastime[] }[] = [
+	{
+		title: "Always up for",
+		items: [
+			{ text: "Beach volleyball", note: "Most Sundays at Ocean Beach." },
+			{ text: "Soccer, any time", note: "Grew up playing; high school team, and captain of my house team." },
+			{ text: "Surfing", note: "Occasionally at Pacifica." },
+			{ text: "West Coast Swing", note: "1.5 years in SF, after picking up salsa and bachata in Colombia." },
+			{ text: "Powerlifting", note: "At Fitness SF." },
+			{ text: "Swimming", note: "Casual pools are rare in SF, so it’s usually laps at a gym." },
+			{ text: "Badminton, table tennis or a casual game of basketball" },
+			{ text: "Chess, in person", note: "I have the board." },
+			{ text: "Texas hold’em" },
+			{ text: "Pool at a neighbourhood bar" },
+		],
+	},
+	{
+		title: "Done that",
+		items: [
+			{ text: "Open-water scuba certification", note: "Colombia." },
+			{ text: "Shark diving", note: "Hawaii. Locked eyes with a tiger shark." },
+			{ text: "Two weeks of surf camp", note: "Puerto Escondido." },
+			{
+				text: "Improv 101 at Endgame",
+				note: "Still looking for people who laugh at the same things: ideally drier, more British.",
+			},
+			{ text: "Skydiving", note: "Half Moon Bay." },
+			{ text: "Skiing", note: "Picked it up decently; the travel and cost won the argument." },
+			{ text: "A motorcycle I’ve owned for a decade", note: "Currently parked in India." },
+		],
+	},
+	{
+		title: "Bucket list",
+		items: [
+			{ text: "A skydiving licence, then wingsuit flying" },
+			{ text: "A private pilot’s licence" },
+			{ text: "Climbing Everest" },
+			{ text: "Ushuaia to Alaska by motorcycle" },
+			{ text: "Visiting something in space, and coming back" },
+		],
+	},
+];
