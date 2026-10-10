@@ -1,54 +1,5 @@
 // Content for the Projects, Ideas and Domains pages. Publish only confirmed facts.
 
-export interface Project {
-	name: string;
-	href?: string;
-	status: string;
-	line?: string;
-}
-
-export const projectGroups: { title: string; projects: Project[] }[] = [
-	{
-		title: "Building",
-		projects: [
-			{
-				name: "DevScan",
-				href: "https://devscan.ai/",
-				status: "early, building",
-				line: "Devtool discovery, comparison, onboarding and purchases.",
-			},
-			{
-				name: "SearchGuests",
-				href: "https://searchguests.com/",
-				status: "live",
-				line: "High-quality information on the people attending Luma events, to find the ones best fit for your goals.",
-			},
-			{
-				name: "FamilyDrawer",
-				status: "in development, not yet usable",
-				line: "Foster low-pressure, genuine connection between families living in different cities and across generations.",
-			},
-		],
-	},
-	{
-		title: "Not maintained",
-		projects: [
-			{
-				name: "JiffyScan",
-				href: "https://jiffyscan.xyz/",
-				status: "online, not maintained",
-				line: "Analytics for smart-wallet companies. Market leader, $600k ARR in six months.",
-			},
-			{
-				name: "DevRanker",
-				href: "https://devranker.com/",
-				status: "parked",
-				line: "Developer-adoption signals from millions of public GitHub repositories, as leads for data-infra companies. 40 customers.",
-			},
-		],
-	},
-];
-
 export interface Idea {
 	/** The first tag places the idea in the list; any tag matches the filter. */
 	tags: string[];

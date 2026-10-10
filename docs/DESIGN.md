@@ -5,10 +5,10 @@ question at a time; the built home page is now the reference.
 
 ## Principles
 
-- **Content first, minimal frame.** Every page shares one thin header (name left, Projects ·
-  Ideas · Domain names right, current page in the accent colour) and the same contact footer
+- **Content first, minimal frame.** Every page shares one thin header (name left, Domain names ·
+  Ideas · Off work right, current page in the accent colour) and the same contact footer
   (GitHub, X, LinkedIn, written-out email). Nothing else frames the content.
-- **Catalog pages** (Projects, Ideas, Domain names) open with one plain sentence, then quiet mono
+- **Catalog pages** (Domain names, Ideas, Off work) open with one plain sentence, then quiet mono
   group labels. Statuses are honest (`live`, `parked`, `not maintained`); a row with no
   confirmed line shows just its name. Link only what has something to see.
   On Domain names, the main project being built gets a small accent `building` label; a
@@ -29,6 +29,8 @@ question at a time; the built home page is now the reference.
   details show.
 - **External links open in a new tab** (`target="_blank" rel="noopener"`); links within the
   site stay in the same tab.
+- **Domain names leads.** It is first in the menu, and the home page carries one hook line
+  under the intro with the live count of domains.
 - **Home stays clean.** Backers get one quiet line under the opening sentence; earlier
   achievements live on Side quests (`/side-quests/`, not in the menu), linked once under the
   ledger.
