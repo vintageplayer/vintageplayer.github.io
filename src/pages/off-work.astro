@@ -1,6 +1,8 @@
 ---
 import { offWork } from "@/data/catalog";
 import Base from "@/layouts/Base.astro";
+
+const slug = (title: string) => `off-${title.toLowerCase().replaceAll(" ", "-")}`;
 ---
 
 <Base meta={{ title: "Off work", description: "What Aditya Agarwal is up for outside work." }}>
@@ -9,9 +11,18 @@ import Base from "@/layouts/Base.astro";
 			Off work, I’d rather be doing something active, anything on this list or just time in Dolores Park, Golden
 			Gate Park or the Presidio, than sitting inside eating or watching others play.
 		</h1>
+		<nav aria-label="Sections" class="idea-filter">
+			{
+				offWork.map((group, index) => (
+					<a aria-current={index === 0 ? "true" : undefined} data-tab={slug(group.title)} href={`#${slug(group.title)}`}>
+						{group.title} <span>{group.items.length}</span>
+					</a>
+				))
+			}
+		</nav>
 		{
 			offWork.map((group) => (
-				<section class="catalog-group">
+				<section class="catalog-group off-work-group" id={slug(group.title)}>
 					<h2>{group.title}</h2>
 					<ul class="project-list off-work-list">
 						{group.items.map((item) => (
@@ -27,3 +38,24 @@ import Base from "@/layouts/Base.astro";
 		<p class="catalog-line"><span class="catalog-meta">At home</span>&nbsp; Vegetarian; I cook fresh, high-protein meals every day.</p>
 	</div>
 </Base>
+
+<script>
+	// Without JavaScript every section shows and the links jump to it; with it they switch between sections.
+	const links = [...document.querySelectorAll<HTMLAnchorElement>(".idea-filter a[data-tab]")];
+	const sections = [...document.querySelectorAll<HTMLElement>(".off-work-group")];
+	const show = (id: string) => {
+		for (const section of sections) section.hidden = section.id !== id;
+		for (const link of links) {
+			if (link.dataset.tab === id) link.setAttribute("aria-current", "true");
+			else link.removeAttribute("aria-current");
+		}
+	};
+	for (const link of links) {
+		link.addEventListener("click", (event) => {
+			event.preventDefault();
+			show(link.dataset.tab ?? "");
+		});
+	}
+	document.querySelector(".catalog")?.classList.add("is-tabbed");
+	show(links[0]?.dataset.tab ?? "");
+</script>
