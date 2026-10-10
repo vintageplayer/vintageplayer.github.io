@@ -1,0 +1,29 @@
+---
+import { offWork } from "@/data/catalog";
+import Base from "@/layouts/Base.astro";
+---
+
+<Base meta={{ title: "Off work", description: "What Aditya Agarwal is up for outside work." }}>
+	<div class="catalog">
+		<h1 class="catalog-intro">
+			Off work, I’d rather be doing something active, anything on this list or just time in Dolores Park, Golden
+			Gate Park or the Presidio, than sitting inside eating or watching others play.
+		</h1>
+		{
+			offWork.map((group) => (
+				<section class="catalog-group">
+					<h2>{group.title}</h2>
+					<ul class="project-list off-work-list">
+						{group.items.map((item) => (
+							<li>
+								<p>{item.text}</p>
+								{item.note && <p class="catalog-line">{item.note}</p>}
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+		<p class="catalog-line"><span class="catalog-meta">At home</span>&nbsp; Vegetarian; I cook fresh, high-protein meals every day.</p>
+	</div>
+</Base>

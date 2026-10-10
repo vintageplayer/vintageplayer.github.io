@@ -32,6 +32,8 @@ question at a time; the built home page is now the reference.
 - **Home stays clean.** Backers get one quiet line under the opening sentence; earlier
   achievements live on Side quests (`/side-quests/`, not in the menu), linked once under the
   ledger.
+- **Off work** (`/off-work/`, in the menu) is the non-work side, framed as an invitation:
+  what I am always up for, what I have done, a bucket list. It reuses the catalog style.
 - **Facts only.** No placeholder copy or links. The email is written out
   (`aditya at artsofbaniya dot com`), not linked, so simple scrapers skip it.
 
