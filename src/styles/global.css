@@ -95,6 +95,10 @@ h1, h2, h3, p { margin-top: 0; }
 .project-list, .domain-list, .idea-list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
 .project-list { gap: 20px; }
 .off-work-list { gap: 12px; }
+.off-work-group { scroll-margin-top: 16px; }
+.off-work-home { margin-top: -24px; }
+.off-work-group[hidden] { display: none; }
+.is-tabbed .off-work-group h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .project-list p { margin: 0; }
 .domain-list { gap: 12px; }
 .domain-list li { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 2px 20px; align-items: baseline; }

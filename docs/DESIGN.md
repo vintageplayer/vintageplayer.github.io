@@ -34,6 +34,8 @@ question at a time; the built home page is now the reference.
   ledger.
 - **Off work** (`/off-work/`, in the menu) is the non-work side, framed as an invitation:
   what I am always up for, what I have done, a bucket list. It reuses the catalog style.
+  Its three sections switch with the same text-link tabs as the Ideas filter (no "All";
+  "Always up for" opens first); without JavaScript they all show and the links jump.
 - **Facts only.** No placeholder copy or links. The email is written out
   (`aditya at artsofbaniya dot com`), not linked, so simple scrapers skip it.
 
