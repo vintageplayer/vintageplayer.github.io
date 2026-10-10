@@ -1,5 +1,6 @@
 ---
 import Base from "@/layouts/Base.astro";
+import { domainGroups } from "@/data/catalog";
 import { siteConfig } from "@/site.config";
 
 interface Row {
@@ -51,6 +52,7 @@ const rows: Row[] = [
 			"Onboarded the largest retail bank by number of customers to the platform, which got the startup to a unicorn valuation. First hire on the data platform team, which grew to 14.",
 	},
 ];
+const domainCount = domainGroups.reduce((total, group) => total + group.domains.length, 0);
 ---
 
 <Base meta={{ title: siteConfig.title }}>
@@ -66,6 +68,9 @@ const rows: Row[] = [
 				</p>
 			</div>
 		</header>
+		<p class="home-hook">
+			Icebreaker: <a href="/domains/">how many domains in your idea grave? I’m at&nbsp;{domainCount}&nbsp;→</a>
+		</p>
 		<ol class="home-ledger">
 			{
 				rows.map((row) => (
