@@ -40,6 +40,10 @@ export const ideas: Idea[] = [
 		tags: ["Community"],
 		text: "Grounded, practical advice for men, and a community for guidance from people who have been through the same situations.",
 	},
+	{
+		tags: ["Safety"],
+		text: "Smarter maps from connected cars that show you vehicles in your blind spots and other lanes, so you can prepare before low visibility turns into an accident.",
+	},
 ];
 
 export interface Domain {
@@ -89,7 +93,7 @@ export const domainGroups: { title: string; domains: Domain[] }[] = [
 				name: "MomProof.ai",
 				status: "retired",
 				line: "Inspired by The Mom Test.",
-				note: "Replaced by HonestCustomer.com.",
+				note: "Replaced by HonestCustomer.com; now saved for blind-spot maps from connected cars.",
 			},
 			{
 				name: "DailyStandupBuddy.com",
