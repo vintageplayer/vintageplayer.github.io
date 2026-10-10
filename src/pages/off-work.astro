@@ -11,6 +11,7 @@ const slug = (title: string) => `off-${title.toLowerCase().replaceAll(" ", "-")}
 			Off work, I’d rather be doing something active, anything on this list or just time in Dolores Park, Golden
 			Gate Park or the Presidio, than sitting inside eating or watching others play.
 		</h1>
+		<p class="catalog-line off-work-home"><span class="catalog-meta">At home</span>&nbsp; Vegetarian; I cook fresh, high-protein meals every day.</p>
 		<nav aria-label="Sections" class="idea-filter">
 			{
 				offWork.map((group, index) => (
@@ -35,7 +36,6 @@ const slug = (title: string) => `off-${title.toLowerCase().replaceAll(" ", "-")}
 				</section>
 			))
 		}
-		<p class="catalog-line"><span class="catalog-meta">At home</span>&nbsp; Vegetarian; I cook fresh, high-protein meals every day.</p>
 	</div>
 </Base>
 
