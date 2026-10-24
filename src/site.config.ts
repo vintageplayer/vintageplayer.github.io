@@ -21,4 +21,4 @@ export const socialLinks = [
 ];
 
 // Written out rather than linked, so simple address scrapers do not pick it up.
-export const emailText = "aditya at artsofbaniya dot com";
+export const emailText = "aditya at whoisadi dot com";
